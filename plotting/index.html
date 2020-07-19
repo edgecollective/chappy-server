@@ -1,0 +1,80 @@
+<html>
+    <head>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.js"></script>
+<link rel="stylesheet" href="./style.css">
+      </head>
+        
+<body>
+	<!--	<a href="http://olathe.edgecollective.io">olathe.edgecollective.io</a>-->
+
+  <script src="get.js"></script>
+
+  <a href="https://edgecollective.io">Edge Collective</a>
+
+    <h1>Chappaquiddick Water Level: Ultrasonic Test</h1>
+
+  <div id = "blurb">
+
+	  Sensing water level using a <a href="https://www.digikey.com/product-detail/en/maxbotix-inc/MB7092-100/1863-1008-ND/7896780?utm_adgroup=Sensors%20%26%20Transducers&utm_source=google&utm_medium=cpc&utm_campaign=Dynamic%20Search_RLSA&utm_term=&utm_content=Sensors%20%26%20Transducers&gclid=Cj0KCQjw9b_4BRCMARIsADMUIyryIEmI6rryRw7F4ur80PL6spviUQgxziwmJwr42EsuW5SXFivQB3AaAjdaEALw_wcB">MatxBotix Inc MB7092 Ultrasonic sensor</a> on <a href=" https://en.wikipedia.org/wiki/Chappaquiddick_Island">Chappaquiddick Island</a>.
+<!--
+	  <div id="blurb">
+  <img src="img/chappy_map2.png" width=200>
+	  </div>
+-->
+
+  </div>
+
+  <div id = "blurb">
+
+
+	 <a href="https://photos.app.goo.gl/qn6qCrwV3iuWdwgS8">
+
+		  <img src="img/chap.jpg" width=200><img src="img/sensor.jpg" width=200><img src="img/sensor_down.jpg" width=200></a>
+
+  </div>
+
+  <h2> Water level</h2>
+
+  <div id="blurb">
+The ultrasonic rangefinder reports a distance measurement in centimeters.  Because the sensor is mounted on a dock, pointing down at the water, this reported distance is the 'distance from the dock down to the water' -- i.e., the largest distance value is associated with the lowest water level.  In order to visualize this more intuitively as 'water height' (and thus better match the predicted tide charts), we're plotting '200 cm minus rangefinder distance (cm)' -- where 200 cm is an arbitrarily chosen height.
+
+  </div>
+
+
+
+  <div class="container">
+
+  <canvas id="distanceChart"></canvas>
+
+</div>
+
+<div id="blurb">
+
+	For reference, here are predicted tide levels for a similar period (source: <a href="https://marineweather.net/tide/edgartown-martha-s-vineyard-ma-tides">marineweather.net</a>): 
+</div>
+
+	<div id="blurb">
+	<img src="img/ref.png" width = 500>
+</div>
+
+<!--
+<div class="container">
+  <canvas id="tp1Chart"></canvas>
+</div>
+
+<div class="container">
+  <canvas id="tp2Chart"></canvas>
+</div>
+-->
+
+ <h2> Battery Voltage </h2>
+
+<div id="blurb">
+The sensor and relay node are powered by a 3.7 V Lithium-ion rechargeable battery, which is being recharged via a solar charging circuit.  It appears to be a characteristic of the circuit that while the panel is charging the battery we measure approx 4.3 V on the battery; when the sun is obscured by clouds, or sets in the evening, we drop down to closer to 4.13 V, and then discharge from that point.</div>
+
+<div class="container">
+<canvas id="batteryChart"></canvas>
+</div>
+
+  </body>
+</html>
